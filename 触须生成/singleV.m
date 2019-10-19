@@ -1,6 +1,7 @@
 %实现以点(W,H)为起点生成触须
 %坐标根据需要进行更改
 %输入：触须起点（W,H），旋转角度rotate_the（逆正顺负）
+%输出：半径集r，速度V
 function [r,V]=singleV(W,H,rotate_the)
 % q=1/80;
 n=16;     %16个速度集
@@ -52,7 +53,7 @@ for j=1:1  %%%%%%%%%%%%%%%
     title([num2str(V) 'm/s']);
     xlabel('X轴/m');
     ylabel('Y轴/m');
-    axis([-30,15,-30,60])
+    axis([-40,40,-40,40])
     
     hold on
     for k=1:81
