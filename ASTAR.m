@@ -1,14 +1,12 @@
 function globalpath=ASTAR(obstacle,map)
-% open=zeros(500,500);
-% close=zeros(500,500);
-% globalpath=zeros(200,200);
+
 open=[];
 close=[];
 globalpath=[];
 findflag=false; %判断是否找到路径
 
 %open=[x,y,F,G,parentx,parenty]
-open=[map.start(1),map.start(2),0+h(map.start,map.goal),0,map.start(1),map.start(2)];
+open(1,:)=[map.start(1),map.start(2),0+h(map.start,map.goal),0,map.start(1),map.start(2)];
 next=MOTIONMODEL();
 
 while ~findflag
@@ -64,17 +62,17 @@ while ~findflag
         
     end
     
-%     画网格线
-%     LINEGRID(map);
-%     hold on;
-%     pause(0.01);
+
+end
+%   画网格线
+    LINEGRID(map);
+    hold on;
     %绘制close和open节点
     FillPlot(close,'g');
     hold on;
     FillPlot(open,'r')
     hold on;
-end
-
+    
 globalpath=GETPATH(close,map.start);
 end
         
